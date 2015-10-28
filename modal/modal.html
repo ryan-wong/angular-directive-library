@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h3>{{vm.modalOptions.headerText}}</h3>
+</div>
+<div class="modal-body" ng-class="{'p-0': vm.modalOptions.includeText.length > 0}">
+    <p ng-if="vm.modalOptions.bodyText.length > 0">{{vm.modalOptions.bodyText}}</p>
+    <div ng-if="vm.modalOptions.includeText.length > 0" ng-include src="vm.modalOptions.includeText"></div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn"
+            ng-click="vm.modalOptions.close()">{{vm.modalOptions.closeButtonText}}</button>
+    <button class="btn btn-primary"
+            ng-click="vm.modalOptions.ok();">{{vm.modalOptions.actionButtonText}}</button>
+</div>
